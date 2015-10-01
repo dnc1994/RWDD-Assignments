@@ -1,0 +1,5 @@
+h1 {
+    color: red; /* set color to red*/
+    border: 2px solid blue; /* set a 2px-wide blue solid line around the title*/
+    text-shadow: 2px 2px 2px #000; /* set a black shadow for the text */
+}
