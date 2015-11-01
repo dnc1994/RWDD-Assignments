@@ -1,0 +1,114 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+    <title>Task List</title>
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+    <link href="css/font-awesome.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+    <nav class="navbar navbar-default">
+        <div class="container">
+            <!-- start collapsed navbar -->
+            <div class="navbar-header">
+                <button type="button"
+                        class="navbar-toggle collapsed"
+                        data-toggle="collapse"
+                        data-target="#main_navbar"
+                        aria-expanded="false">
+                    open!
+                </button>
+            </div>
+            <!-- / collapsed navbar -->
+            <!-- start un-collapsed navbar -->
+            <div class="collapse navbar-collapse" id="main_navbar">
+                <ul class="nav navbar-nav">
+                    <li><a href="index.html">
+                        <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
+                        Home</a>
+                    </li>
+                    <li><a href="tasks.html">
+                        <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
+                        Tasks</a>
+                    </li>
+                    <li class="active"><a href="about.html">
+                        <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+                        About</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- / un-collapsed navbar -->
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1>About</h1>
+
+        <ol class="breadcrumb">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+        </ol>
+
+    </div>
+
+    <div class="container">
+
+        <div class="row row-content">
+            <div class="col-xs-12 col-sm-8">
+                <h2>What's this site for?</h2>
+                <p>
+                This site is for week 2 assignment of Responsive Web Design course. <br>
+                The site presents a task list, which each item accompanied by a checkbox and a link to the corresponding detail page. On detail page there are specific description of the task as well as the information of the person associated with the task. <br>
+                While designing this site, I mainly used responsive grid, navbar, breadcrumb, media class and some glyphicons, as well as some social icons from font-awesome. <br>
+                I hope you enjoy this and help me improve it!
+                </p>
+            </div>
+        </div>
+
+        <div class="row row-content">
+            <div class="col-xs-12 col-sm-4">
+                <h3>Contact</h3>
+                <address>
+                    1234 Front Street<br>
+                    Developer District<br>
+                    SHANG HAI<br>
+                    <i class="fa fa-phone"></i> +86 13880000000<br>
+                    <i class="fa fa-envelope"></i><a href="mailto:frontend@dev.com"> frontend@dev.com</a>
+                </address>
+            </div>
+
+            <div class="col-xs-12 col-sm-4">
+                <div class="nav navbar-nav" style="padding: 40px 10px;">
+                    <a class="btn btn-social-icon btn-google-plus" href="http://google.com/+"><i class="fa fa-google-plus"></i></a>
+                    <a class="btn btn-social-icon btn-facebook" href="http://www.facebook.com/profile.php?id="><i class="fa fa-facebook"></i></a>
+                    <a class="btn btn-social-icon btn-linkedin" href="http://www.linkedin.com/in/"><i class="fa fa-linkedin"></i></a>
+                    <a class="btn btn-social-icon btn-twitter" href="http://twitter.com/"><i class="fa fa-twitter"></i></a>
+                    <a class="btn btn-social-icon btn-youtube" href="http://youtube.com/"><i class="fa fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <div class="col-xs-12">
+            <p style="padding:10px;"></p>
+            <p align=center>© 2015 Linghao Zhang</p>
+        </div>
+    </footer>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</body>
+
+</html>

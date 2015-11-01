@@ -1,0 +1,13 @@
+.row-content {
+	margin: 0px auto;
+	padding: 50px 0px;
+	border-bottom: 1px ridge;
+	min-height: 200px;
+}
+
+.row-list {
+	margin: 0px auto;
+	padding: 20px 0px;
+	border-bottom: 1px solid;
+	min-height: 50px;
+}
