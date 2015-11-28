@@ -1,0 +1,159 @@
+<head>
+  <title>Site Ace</title>
+</head>
+
+<body>
+
+</body>
+
+<template name="ApplicationLayout">
+    {{> yield "header"}}
+    {{> yield "main"}}
+</template>
+
+<template name="navbar">
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">Site Ace</a>
+            </div>
+            <div class="navbar-header">
+                {{> loginButtons}}
+            </div>
+            <form class="navbar-form navbar-right js-search" role="search">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Search" id="search_input" name="search_input">
+                </div>
+                <button type="submit" class="btn btn-default">Search</button>
+            </form>
+        </div>
+    </nav>
+</template>
+
+<template name="site_list_page">
+    <div class="container">
+        {{#if currentUser}}
+            {{> site_form}}
+        {{/if}}
+    </div>
+    <div class="container">
+        {{> site_list}}
+    </div>
+</template>
+
+<template name="site_form">
+    <a class="btn btn-default js-toggle-site-form" href="#">
+        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+    </a>
+    <div id="site_form" class="hidden_div">
+        <form class="js-save-site-form">
+          <div class="form-group">
+            <label for="url">URL</label>
+            <input type="text" class="form-control" id="url" placeholder="http://www.mysite.com" name="url">
+          </div>
+          <div class="form-group">
+            <label for="title">Title</label>
+            <input type="text" class="form-control" id="title" placeholder="Mysite" name="title">
+          </div>
+            <div class="form-group">
+            <label for="description">Description</label>
+            <input type="text" class="form-control" id="description" placeholder="I found this site really useful for ..." name="description">
+          </div>
+          <button type="submit" class="btn btn-default">Submit</button>
+        </form>
+    </div>
+</template>
+
+<template name="site_list">
+    <div class="row">
+        {{#each sites}}
+            {{>site_list_item}}
+        {{/each}}
+    </div>
+</template>
+
+<template name="site_list_item">
+    <div class="col-xs-12">
+        <a href="/sites/{{_id}}">{{title}}</a> <br />
+        <a href="{{url}}">{{url}}</a>
+        <p>
+            {{description}}
+        </p>
+        <p>
+            Up: {{upvotes}}
+            Down: {{downvotes}}
+        </p>
+        <a href="#" class="btn btn-default js-upvote">
+            <span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span>
+        </a>
+        <a href="#" class="btn btn-default js-downvote">
+            <span class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span>
+        </a>
+    </div>
+</template>
+
+<template name="site_detail_page">
+    <div class="container">
+        {{> site_detail_item}}
+    </div>
+    <div class="container">
+        {{> site_detail_comment_list}}
+    </div>
+</template>
+
+<template name="site_detail_comment">
+    <div class="col-xs-12 col-sm-3">
+        {{createdByString}} on {{createdOnString}}:
+    </div>
+    <div class="col-xs-12 col-sm-9">
+        {{comment}}
+    </div>
+</template>
+
+<template name="site_detail_comment_list">
+    <h3>Comments</h3>
+    {{#each comments}}
+        <div class="row">
+            {{> site_detail_comment}}
+        </div>
+    {{/each}}
+    <div class="row">
+        {{> comment_form}}
+    </div>
+</template>
+
+<template name="comment_form">
+    <div id="comment_form">
+        <form class="js-save-comment-form">
+            <div class="form-group">
+                <label for="comment">What do you think?</label>
+                <input type="text" class="form-control" id="comment" name="comment">
+            </div>
+            <div class="form-group hidden_div">
+                <input type="text" class="form-control" id="site_id" name="site_id" value="{{site._id}}">
+            </div>
+            <button type="submit" class="btn btn-default">Submit</button>
+        </form>
+    </div>
+</template>
+
+<template name="site_detail_item">
+    <div class="col-xs-12">
+        <h2>{{site.title}}</h2> <br />
+        <b>URL: </b><a href="{{site.url}}">{{site.url}}</a> <br />
+        <b>Description:</b> <br />
+        <p>
+            {{site.description}}
+        </p>
+        <p>
+            Up: {{site.upvotes}}
+            Down: {{site.downvotes}}
+        </p>
+        <a href="#" class="btn btn-default js-upvote">
+            <span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span>
+        </a>
+        <a href="#" class="btn btn-default js-downvote">
+            <span class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span>
+        </a>
+    </div>
+</template>
